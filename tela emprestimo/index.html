@@ -6,88 +6,103 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.84.0">
-    <title>Checkout example · Bootstrap v5.0</title>
+    <title>Formulário com Imagem e Fundo Verde</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/checkout/">
 
-    
-
     <!-- Bootstrap core CSS -->
-<link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="form-validation.css" rel="stylesheet">
+
+    <style>
+      .table-container {
+        background-color: #d4edda; /* Verde claro */
+        padding: 40px; /* Aumenta o padding para mais espaço */
+        border-radius: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .table-container .form-container {
+        background-color: #fff;
+        padding: 30px; /* Aumenta o padding interno do formulário */
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        flex: 1; /* Permite que o formulário se expanda */
+        max-width: 600px; /* Define uma largura máxima para o formulário */
+      }
+
+      .table-container img {
+        max-width: 100%;
+        border-radius: 8px;
+        margin-right: 20px; /* Espaço entre a imagem e o formulário */
+      }
+    </style>
   </head>
   <body class="bg-light">
     
-<div class="container">
-  <main>
-    <div class="py-5 text-center">
-      <img class="d-block mx-auto mb " src="assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-      <h2>Emprestimo de livro</h2>
-      <p class="lead">Insira os dados do livro no formulario abaixo</p>
-    </div>
-      <div class="col-md-7 col-lg-8">
-        < class="needs-validation" novalidate>
-        
-            <div class="form-group">
+    <div class="container mt-5">
+      <div class="table-container">
+        <!-- Imagem do Livro -->
+        <div class="d-flex align-items-center justify-content-center mb-4 mb-md-0">
+          <img src="assets/brand/bootstrap-logo.svg" alt="Capa do Livro" width="300" height="229">
+        </div>
+
+        <!-- Formulário -->
+        <div class="form-container">
+          <h2 class="text-center mb-4">Empréstimo de Livro</h2>
+          <form class="needs-validation" novalidate>
+            <div class="mb-3">
               <label for="firstName" class="form-label">Código do Livro</label>
               <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
               <div class="invalid-feedback">
-                Codigo do livro não valido.
+                Código do livro não válido.
               </div>
             </div>
 
-
-            <div class="form-group">
-              <label for="lastName" class="form-label">Titulo do livro</label>
-              <input type="text" class="form-control" id="Titulo do livro" placeholder="" value="" required>
+            <div class="mb-3">
+              <label for="lastName" class="form-label">Título do Livro</label>
+              <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
               <div class="invalid-feedback">
-                Nome do titulo do livro não valido.
+                Nome do título do livro não válido.
               </div>
             </div>
 
-            <div class="form-group">
+            <div class="mb-3">
               <label for="username" class="form-label">Autor</label>
               <div class="input-group has-validation">
-              <input type="text" class="form-control" id="username" placeholder="Username" required>
-              <div class="invalid-feedback">
-                Your username is required.
+                <input type="text" class="form-control" id="username" placeholder="Autor" required>
+                <div class="invalid-feedback">
+                  O nome do autor é obrigatório.
                 </div>
               </div>
             </div>
-            <div class="form-group">
-              <label for="address" class="form-label">Gênero</label>
-              <input type="Biografia" class="form-control" id="Gênero" placeholder="memórias" required>
-              <label for="Edição" class="form-label">Edição</label>
-              <input type="text" class="form-control" id="Edição" placeholder="1° edição">
+
+            <div class="mb-3">
+              <label for="genre" class="form-label">Gênero</label>
+              <input type="text" class="form-control" id="genre" placeholder="Gênero do livro" required>
             </div>
 
-            <div class="form-group">
-
-              <label for="IBSN" class="form-label">IBSN</label>
-              <input type="text" class="form-control" id="IBSN" placeholder="9788501044457">
+            <div class="mb-3">
+              <label for="edition" class="form-label">Edição</label>
+              <input type="text" class="form-control" id="edition" placeholder="1° edição">
             </div>
-          </div>
-          <button class="w-50 btn btn-primary btn-lg" type="submit">CONFIRMAR</button>
-        </form>
+
+            <div class="mb-3">
+              <label for="isbn" class="form-label">ISBN</label>
+              <input type="text" class="form-control" id="isbn" placeholder="9788501044457">
+            </div>
+
+            <button class="w-100 btn btn-primary btn-lg" type="submit">Confirmar</button>
+          </form>
+        </div>
       </div>
     </div>
-  </main>
-
-  <footer class="my-5 pt-5 text-muted text-center text-small">
-    <p class="mb-1">&copy; 2024 JHENNY E CAUÃ</p>
-    <ul class="list-inline">
-      <li class="list-inline-item"><a href="#">Privacy</a></li>
-      <li class="list-inline-item"><a href="#">Terms</a></li>
-      <li class="list-inline-item"><a href="#">Support</a></li>
-    </ul>
-  </footer>
-</div>
-
 
     <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
-
-      <script src="form-validation.js"></script>
+    <script src="form-validation.js"></script>
   </body>
 </html>
