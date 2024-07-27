@@ -51,3 +51,7 @@ body {
     font-size: 3.5rem;
   }
 }
+
+.w-100.btn.btn-lg.btn-primary {
+  background-color: #4CAF50; /* muda a cor do botão para verde */
+}
