@@ -19,41 +19,38 @@
 
   <style>
     .table-container {
-  background-color: #d4edda; /* Verde claro */
-  padding: 40px; /* Aumenta o padding para mais espaço */
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center; /* Centraliza o conteúdo horizontalmente */
-}
+      background-color: #d4edda; /* Verde claro */
+      padding: 40px; /* Aumenta o padding para mais espaço */
+      border-radius: 8px;
+      display: flex;
+      align-items: flex-start; /* Alinha a imagem e o formulário ao topo */
+      justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    }
 
-.table-container .form-container {
-  background-color: #fff;
-  padding: 30px; /* Aumenta o padding interno do formulário */
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-width: 800px; /* Define uma largura máxima para o formulário */
-  width: 100%; /* Permite que o formulário ocupe toda a largura disponível até o máximo definido */
-  margin-right: 30px; /* Espaço entre a imagem e o formulário */
-}
+    .table-container .form-container {
+      background-color: #fff;
+      padding: 30px; /* Aumenta o padding interno do formulário */
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 1000px; /* Define uma largura máxima para o formulário */
+      width: 100%; /* Permite que o formulário ocupe toda a largura disponível até o máximo definido */
+      margin-left: 20px; /* Espaço entre a imagem e o formulário */
+    }
 
-.table-container img {
-  width: 200px; /* Largura da imagem */
-  height: 200px; /* Altura da imagem para manter o formato quadrado */
-  object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
-}
-
-
-    </style>
+    .table-container img {
+      width: 150px; /* Largura da imagem */
+      height: auto; /* Altura automática para manter o aspecto da imagem */
+      object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+    }
+  </style>
     
   <body class="bg-light">
     
     <div class="container mt-5">
       <div class="table-container">
         <!-- Imagem do Livro -->
-        <div class="d-flex align-items-center justify-content-center mb-4 mb-md-0">
-          <img src="images/anefrank.png" alt="Capa do Livro" width="231" height="231">
-
+        <div class="d-flex align-items-start justify-content-center mb-4 mb-md-0">
+          <img src="images/anefrank.png" alt="Capa do Livro">
         </div>
 
         <!-- Formulário -->
@@ -89,7 +86,26 @@
             <div class="mb-3">
               <label for="isbn" class="form-label">ISBN</label>
               <input type="text" class="form-control" id="isbn" placeholder="9788501044457">
+
+            </div> 
+
+            <div class="mb-3">
+              <label for="Publicação" class="form-label">Publicação</label>
+              <input type="text" class="form-control" id="publicação" placeholder= "Rio Janeiro, 2011">
             </div>
+           
+            <div class="mb-3">
+              <label for="localização" class="form-label">Localização</label>
+              <input type="text" class="form-control" id="localização" placeholder="Estante B, Prateleira 3">
+
+            </div>
+
+           <div class="mb-3">
+              <label for="Quantidade" class="form-label">Quantidade</label>
+              <input type="text" class="form-control" id="Quantidade" placeholder="Estante B, Prateleira 3">
+
+            </div>
+
            
             <button type="button" class="btn btn-danger">cancelar</button>
             <button type="button" class="btn btn-success">confirmar</button>
