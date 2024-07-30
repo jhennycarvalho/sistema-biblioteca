@@ -1,114 +1,124 @@
-
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
-  <head>
-    <script src="assets/js/color-modes.js"></script>
- 
-    <title>Cadastro de usuário</title>
- 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/product/">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/offcanvas-navbar/">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-   
-    <!-- style -->
-    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-      body, html {
-        height: 100%;
-      }
- 
-      .form-container {
-        background-color: #d4edda; /* Fundo verde claro */
-        padding: 40px; /* Aumenta o padding para mais espaço */
-        border-radius: 8px; /* Bordas arredondadas */
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para destacar o formulário */
-        max-width: 800px; /* Define uma largura máxima */
-        width: 100%; /* Largura total até o máximo definido */
-      }
- 
-      .container-center {
-        height: 100%; /* Altura total da página */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    </style>
- 
-   
-    <!-- Custom styles for this template -->
-    <link href="style/sidebars.css" rel="stylesheet">
-  </head>
-  <body>
-    <!-- Container centralizado -->
-    <div class="container-center">
-      <!-- Formulário dentro de um contêiner com fundo verde -->
-      <div class="form-container">
-        <div style="text-align: right;">
-          <label for="uploadInput" style="margin-left: 0px; display: block;">
-            <img id="fotoPerfil" src="images/4b7b91fdff8a6d68c79671b133cc3956.jpg" alt="Foto de Perfil" style="width: 150px; height: 150px; border-radius: 50%;">
-          </label>
-          <a id="alterarFoto" style="cursor: pointer; text-decoration: underline; color: #337ab7; margin-right: 35px;">Alterar foto</a>
-          <input type="file" id="uploadInput" accept="image/*" style="display: none;">
+<head>
+  <meta charset="utf-8">
+  <script src="assets/js/color-modes.js"></script>
+
+  <title>Cadastro de usuário</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/product/">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/offcanvas-navbar/">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+  <!-- style -->
+  <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+    }
+
+    .form-container {
+      background-color: #d4edda; /* Fundo verde claro */
+      padding: 40px; /* Aumenta o padding para mais espaço */
+      border-radius: 8px; /* Bordas arredondadas */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para destacar o formulário */
+      max-width: 800px; /* Define uma largura máxima */
+      width: 100%; /* Largura total até o máximo definido */
+      box-sizing: border-box; /* Inclui o padding e a borda no cálculo da largura */
+    }
+
+    .container-center {
+      height: 100%; /* Altura total da página */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .form-row {
+      margin-bottom: 20px; /* Espaço abaixo de cada linha do formulário */
+    }
+
+    .form-row .col-md-4 {
+      margin-bottom: 15px; /* Espaço abaixo de cada coluna */
+    }
+  </style>
+
+  <!-- Custom styles for this template -->
+  <link href="style/sidebars.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Container centralizado -->
+  <div class="container-center">
+    <!-- Formulário dentro de um contêiner com fundo verde -->
+    <div class="form-container">
+      <div style="text-align: right;">
+        <label for="uploadInput" style="margin-left: 0px; display: block;">
+          <img id="fotoPerfil" src="images/4b7b91fdff8a6d68c79671b133cc3956.jpg" alt="Foto de Perfil" style="width: 150px; height: 150px; border-radius: 50%;">
+        </label>
+        <a id="alterarFoto" style="cursor: pointer; text-decoration: underline; color: #337ab7; margin-right: 35px;">Alterar foto</a>
+        <input type="file" id="uploadInput" accept="image/*" style="display: none;">
+      </div>
+
+      <script>
+        document.getElementById('alterarFoto').addEventListener('click', function() {
+          document.getElementById('uploadInput').click();
+        });
+
+        document.getElementById('uploadInput').addEventListener('change', function(event) {
+          var reader = new FileReader();
+          reader.onload = function(){
+            var fotoPerfil = document.getElementById('fotoPerfil');
+            fotoPerfil.src = reader.result;
+          }
+          reader.readAsDataURL(event.target.files[0]);
+        });
+      </script>
+      <br>
+
+      <div class="row">
+        <div class="col-md-4">
+          <label for="validationCustom01" class="form-label">Nome Completo</label>
+          <input type="text" class="form-control" id="validationCustom01" required>
         </div>
-       
-        <script>
-          document.getElementById('alterarFoto').addEventListener('click', function() {
-            document.getElementById('uploadInput').click();
-          });
-       
-          document.getElementById('uploadInput').addEventListener('change', function(event) {
-            var reader = new FileReader();
-            reader.onload = function(){
-              var fotoPerfil = document.getElementById('fotoPerfil');
-              fotoPerfil.src = reader.result;
-            }
-            reader.readAsDataURL(event.target.files[0]);
-          });
-        </script>
-        <br>
-       
-        <div class="row">
-          <div class="col-md-4">
-            <label for="validationCustom01" class="form-label">Nome Completo</label>
-            <input type="text" class="form-control" id="validationCustom01" required>
-          </div>
-          <div class="col-md-4">
-            <label for="validationCustom02" class="form-label">E-mail</label>
-            <input type="email" class="form-control" id="validationCustom02" required>
-          </div>
-          <div class="col-md-4">
-            <label for="validationCustom03" class="form-label">Endereço</label>
-            <input type="text" class="form-control" id="validationCustom03" required>
-          </div>
-          <div class="col-md-4">
-            <label for="validationCustom04" class="form-label">Telefone</label>
-            <input type="tel" class="form-control" id="validationCustom04" pattern="[0-9]*" inputmode="numeric" required>
-          </div>
-          <div class="col-md-4">
-            <label for="validationCustom05" class="form-label">Data de Nascimento</label>
-            <input type="date" class="form-control" id="validationCustom05" required>
-          </div>
+        <div class="col-md-4">
+          <label for="validationCustom02" class="form-label">E-mail</label>
+          <input type="email" class="form-control" id="validationCustom02" required>
         </div>
-       
-        <div class="row">
-          <div class="col-md-4">
-            <label for="validationCustom06" class="form-label">Nome de Usuário</label>
-            <input type="text" class="form-control" id="validationCustom06" required>
-          </div>
-          <div class="col-md-4">
-            <label for="validationCustom07" class="form-label">Senha</label>
-            <input type="password" class="form-control" id="validationCustom07" required>
-          </div>
+        <div class="col-md-4">
+          <label for="validationCustom03" class="form-label">Endereço</label>
+          <input type="text" class="form-control" id="validationCustom03" required>
         </div>
-        <div class="row">
-          <div class="col-md-12 text-end">
-            <button type="submit" class="btn btn-success" style="margin-right: 30px;">Confirmar Perfil</button>
-          </div>
+        <div class="col-md-4">
+          <label for="validationCustom04" class="form-label">Telefone</label>
+          <input type="tel" class="form-control" id="validationCustom04" pattern="[0-9]*" inputmode="numeric" required>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustom05" class="form-label">Data de Nascimento</label>
+          <input type="date" class="form-control" id="validationCustom05" required>
         </div>
       </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <label for="validationCustom06" class="form-label">Nome de Usuário</label>
+          <input type="text" class="form-control" id="validationCustom06" required>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustom07" class="form-label">Senha</label>
+          <input type="password" class="form-control" id="validationCustom07" required>
+        </div>
+      </div>
+      
+      <div class="text-end">
+        <form action="/tela inicial/tela inicial.html">
+          <button type="submit" class="btn btn-success">Confirmar Perfil</button>
+        </form>
+      </div>
     </div>
-  </body>
+  </div>
+</body>
 </html>
- 
- 
